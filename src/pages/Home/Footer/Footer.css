@@ -1,8 +1,13 @@
 .footer p {
-    color: aqua;
+    color: gray;
     cursor: pointer;
 }
 
 .footer h4 {
-    color: gray;
+    color: wheat;
+}
+
+h3 {
+    color: green;
+    cursor: pointer;
 }
