@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Accident Emergency",
+        "img": "https://i.ibb.co/xHkLRG1/accident-emergency-inn.png",
+        "description": "Health Care Hospital emergency department is staffed with qualified, trained & expert emergency medicine physicians round the clock, to ensure the most appropriate care to all patients. This unit is enriched with updated equipment and modern bed facilities with privacy which is capable of managing multiple trauma patients. This is a wide-spaced and well-equipped Casualty.",
+        "id": 1
+    },
+    {
+        "name": "Cardiac Surgery",
+        "img": "https://i.ibb.co/BHkV9ZQ/Cardiac-Surgery.png",
+        "description": "Cardiac Surgery Department of Health Care Hospital consists of highly skilled and qualified Cardiac Surgeon, Anesthesiologists, Perfusionists and Nurses. The department is enriched with dedicated Modular Cardiac Operation Theater and state-of-the-art Cardiac ICU (CICU).",
+        "id": 2
+    },
+    {
+        "name": "Cardiology",
+        "img": "https://i.ibb.co/m9yLdvF/Cardiology-hero-0.png",
+        "description": "Cardiology Department of Health Care Hospital is operated by a dedicated & experienced team of Cardiologists. It provides 24 hour committed services to the Patients and ready to carry out any cardiac emergencies. The department also includes Pediatric Cardiology.",
+        "id": 3
+    },
+    {
+        "name": "Child Development",
+        "img": "https://i.ibb.co/Z89FgbD/child-development.png",
+        "description": "“Our children are our Future”. A child brings happiness and strengthens in a family, rewarded like a bridge, create bonding in family members. It is our familial, social & moral responsibility to take care our child even though he/ she is different from others children. Sometimes we parents, teachers, society could not understand the different developmental problems in a Child. We parents, teachers, society are not aware of these, so we could not notice about it. For this uncaring reason CHILD WITH SPECIAL NEEDS persist from the main streaming track/ path way.",
+        "id": 4
+    },
+    {
+        "name": "Dental Surgery",
+        "img": "https://i.ibb.co/1mt135K/dental-surgery.png",
+        "description": "Dental surgery is needed for many reasons such as a smile makeover, or to correct an injury. Other dental surgery may be a simple extraction such as wisdom teeth removal. Dental surgery allows doctors to correct conditions or to improve a patient's smile. Typically, dental surgery is outpatient, and your dentist may have referred you to an oral surgeon nearby.",
+        "id": 5
+    },
+    {
+        "name": "Orthopaedic and Trauma",
+        "img": "https://i.ibb.co/hCYnntF/orthopaedic-and-trauma.png",
+        "description": "Health Care Hospital has an advanced Orthopaedics & Trauma Department with a team of highly experienced and skilled consultants, having special interest for Pelvic fracture, Spine surgery, Joint replacement surgery, Arthroscopic surgery and acute and complicated fracture cases. The department is equipped with the most advanced infrastructure to handle all kinds of simple to complex orthopaedics & trauma cases. It is well supported by fully equipped operation theatre (OT), well trained personnel for the pre & post operative care and physiotherapy and rehabilitation unit.",
+        "id": 6
+    }
+]
