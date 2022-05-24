@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Dr. Camelia",
+        "designation": "Jr. Consultant",
+        "department": "Accident and Emergency",
+        "about": "MBBS, MCEM, Fellow in ER & EMS (Singapore)Fellow in Intensive Care Medicine (India)Diploma in Critical Care Medicine & Sonography, CCD (BIRDEM)",
+        "img": "https://i.ibb.co/sVsvWXz/doctor-1.png",
+        "id": 1
+    },
+    {
+        "name": "Dr. Natalia",
+        "designation": "Senior Consultant",
+        "department": "Cardiac Surgery",
+        "about": "MBBS (DMC), MS (Cardiovascular & Thoracic Surgery) WHO Fellow Minimally Invasive Cardiac Surgery Beating Heart CABG & Total Arterial CABG",
+        "img": "https://i.ibb.co/ZMHGxDS/doctor-2.png",
+        "id": 2
+    },
+    {
+        "name": "Dr. Jhon",
+        "designation": "Senior Consultant",
+        "department": "Cardiology",
+        "about": "MBBS (DMC) MD-Card (NICVD), FACC (USA)",
+        "img": "https://i.ibb.co/cxq6kPz/doctor-3.png",
+        "id": 3
+    },
+    {
+        "name": "Dr. Rose",
+        "designation": "Chief Speech Language Pathologist",
+        "department": "Child Development Center",
+        "about": "M. Sc., MS. Ed. (DU) Trained in Singapore, UK, India",
+        "img": "https://i.ibb.co/ggnLbXj/doctor-4.png",
+        "id": 4
+    },
+    {
+        "name": "Dr. Mathew",
+        "designation": "Sr. Dental Surgeon",
+        "department": "Dental Surgery",
+        "about": "BDS (DU), PGT (DDCH) , MPH (DIU)Specially trained in OMFS, King Saud Hospital, KSA",
+        "img": "https://i.ibb.co/gznZsGB/doctor-5.png",
+        "id": 5
+    },
+    {
+        "name": "Dr. Julie",
+        "designation": "Senior Consultant",
+        "department": "Orthopaedic and Trauma",
+        "about": "MBBS (DMC), FRCS (UK), FACS (USA)",
+        "img": "https://i.ibb.co/VN2wjgp/doctor-6.png",
+        "id": 6
+    }
+]

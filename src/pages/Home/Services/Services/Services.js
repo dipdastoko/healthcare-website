@@ -4,7 +4,7 @@ import useAuth from '../../../../Hooks/useAuth';
 import Service from '../Service/Service';
 
 const Services = () => {
-    const allServices = useAuth();
+    const { services } = useAuth();
     return (
         <div>
             <h2 className='text-start ms-5 mt-5'>Our Services</h2>
@@ -12,7 +12,9 @@ const Services = () => {
             <Container>
                 <Row>
                     {
-                        allServices.map(service => <Service service={service}></Service>)
+                        services.map(service => <Service
+                            key={service.id}
+                            service={service}></Service>)
                     }
 
                 </Row>
