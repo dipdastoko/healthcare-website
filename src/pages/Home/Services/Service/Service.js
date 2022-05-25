@@ -3,10 +3,10 @@ import { Button, Card, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Service = props => {
-    const { name, img } = props.service;
+    const { name, img, id } = props.service;
     const navigate = useNavigate();
     const handleSeeDetails = () => {
-        navigate('/serviceDetails');
+        navigate(`/serviceDetails/${id}`);
     }
     return (
         <Col className='my-5' xs={12} md={{ span: 5, offset: 1 }} lg={{ span: 3, offset: 1 }}>
