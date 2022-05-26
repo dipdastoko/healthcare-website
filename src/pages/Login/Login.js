@@ -1,10 +1,16 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import useFirebase from '../../Hooks/useFirebae';
 import Header from '../Home/Header/Header';
 import './Login.css';
 
 const Login = () => {
+    const { user, logInUsingGoogle } = useFirebase();
+    const signInGoogle = () => {
+        logInUsingGoogle();
+        console.log(user);
+    }
     return (
         <>
             <Header></Header>
@@ -27,6 +33,8 @@ const Login = () => {
                     </Button>
                 </Form>
             </div>
+            <br />
+            <Button onClick={signInGoogle}>Sign In Using Google</Button>
         </>
     );
 };
