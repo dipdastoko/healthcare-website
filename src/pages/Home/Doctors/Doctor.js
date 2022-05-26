@@ -3,13 +3,13 @@ import { Button, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
 const Doctor = props => {
-    const { name, img, department } = props.doctor;
+    const { name, img, department, id } = props.doctor;
     const navigate = useNavigate();
     const viewDetails = () => {
-        navigate('/doctorDetails');
+        navigate(`/doctorDetails/${id}`);
     }
     const handleAppointment = () => {
-        navigate('/appointment');
+        navigate(`/appointment/${id}`);
     }
     return (
         <Col className='my-5' xs={12} md={{ span: 5, offset: 1 }} lg={{ span: 3, offset: 1 }}>
