@@ -6,7 +6,7 @@ import './Login.css';
 
 const Login = () => {
     const { firebaseAuths } = useAuth();
-    const { user, setUser, logInUsingGoogle, logInWithEmailPass } = firebaseAuths;
+    const { setUser, logInUsingGoogle, logInWithEmailPass } = firebaseAuths;
     let email, password;
     const getEmail = e => {
         email = e.target.value;
@@ -23,7 +23,6 @@ const Login = () => {
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 setUser(loggedInUser);
-                console.log(user);
             })
     }
     return (

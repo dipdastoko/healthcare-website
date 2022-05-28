@@ -8,7 +8,7 @@ const SignUp = () => {
     let name, email, password;
     const { firebaseAuths } = useAuth();
 
-    const { signUpWithEmailPass, user, setUser, auth } = firebaseAuths;
+    const { signUpWithEmailPass, updateUserName, setUser } = firebaseAuths;
     const getName = e => {
         name = e.target.value;
 
@@ -20,14 +20,13 @@ const SignUp = () => {
         password = event.target.value;
     }
     const handleSignUpButton = () => {
-        signUpWithEmailPass(auth, email, password)
+        signUpWithEmailPass(email, password)
             .then(result => {
-                let registeredUser = result.user;
+                updateUserName(name);
+                const registeredUser = result.user;
                 console.log(registeredUser);
-                registeredUser.displayName = name;
-                console.log(registeredUser.displayName);
                 setUser(registeredUser);
-                console.log(user);
+
             })
     }
     return (

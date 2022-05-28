@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../../Hooks/useAuth';
 
 const Header = () => {
     let activeStyle = {
@@ -10,6 +11,12 @@ const Header = () => {
     let inactiveStyle = {
         color: "gray",
         textDecoration: "none"
+    }
+    const { firebaseAuths } = useAuth();
+    const { user, logOut } = firebaseAuths;
+    const handleLogOutButton = () => {
+        logOut();
+        console.log(user.displayName);
     }
     return (
         <div>
@@ -27,21 +34,25 @@ const Header = () => {
                                         isActive ? activeStyle : inactiveStyle
                                 }
                             ><h5>Home</h5></NavLink>
-                            <NavLink
-                                className='mx-3'
-                                to='/login'
-                                style={
-                                    ({ isActive }) =>
-                                        isActive ? activeStyle : inactiveStyle
-                                }
-                            ><h5>Login</h5></NavLink>
-                            <NavLink
-                                to='/signup'
-                                style={
-                                    ({ isActive }) =>
-                                        isActive ? activeStyle : inactiveStyle
-                                }
-                            ><h5>SignUp</h5></NavLink>
+                            {user?.email ? <Button onClick={handleLogOutButton}>Logout</Button> :
+                                <>
+                                    <NavLink
+                                        className='mx-3'
+                                        to='/login'
+                                        style={
+                                            ({ isActive }) =>
+                                                isActive ? activeStyle : inactiveStyle
+                                        }
+                                    ><h5>Login</h5></NavLink>
+                                    <NavLink
+                                        to='/signup'
+                                        style={
+                                            ({ isActive }) =>
+                                                isActive ? activeStyle : inactiveStyle
+                                        }
+                                    ><h5>SignUp</h5></NavLink>
+                                </>
+                            }
 
                         </Nav>
                     </Navbar.Collapse>
