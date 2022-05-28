@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.init";
 
 initializeAuthentication();
@@ -17,9 +17,19 @@ const useFirebase = () => {
                 setUser(user);
             })
     }
+    const signUpWithEmailPass = (auth, email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
+    const logInWithEmailPass = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password);
+    }
     return {
         user,
-        logInUsingGoogle
+        setUser,
+        auth,
+        logInUsingGoogle,
+        signUpWithEmailPass,
+        logInWithEmailPass
     }
 }
 export default useFirebase;
