@@ -7,6 +7,7 @@ import Appointment from './pages/ProtectedRoutes/Appointment/Appointment';
 import ServiceDetails from './pages/ProtectedRoutes/ServiceDetails/ServiceDetails';
 import ViewDoctorDetails from './pages/ProtectedRoutes/ViewDoctorDetails/ViewDoctorDetails';
 import SignUp from './pages/SignUp/SignUp';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -16,9 +17,9 @@ function App() {
           <Routes>
             <Route index element={<Home></Home>} />
             <Route path='home' element={<Home></Home>} />
-            <Route path='doctorDetails/:doctorId' element={<ViewDoctorDetails />} />
-            <Route path='appointment/:doctorId' element={<Appointment />} />
-            <Route path='serviceDetails/:Id' element={<ServiceDetails />} />
+            <Route path='doctorDetails/:doctorId' element={<PrivateRoute><ViewDoctorDetails /></PrivateRoute>} />
+            <Route path='appointment/:doctorId' element={<PrivateRoute><Appointment /></PrivateRoute>} />
+            <Route path='serviceDetails/:Id' element={<PrivateRoute><ServiceDetails /></PrivateRoute>} />
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<SignUp />} />
           </Routes>

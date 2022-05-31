@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
+import { useEffect, useState } from "react";
+import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, updateProfile, onAuthStateChanged } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.init";
 
 initializeAuthentication();
@@ -35,6 +35,12 @@ const useFirebase = () => {
                 setUser({})
             })
     }
+    useEffect(() => {
+        onAuthStateChanged(auth, user => {
+            setUser(user);
+            console.log(user);
+        })
+    }, [])
     return {
         user,
         setUser,

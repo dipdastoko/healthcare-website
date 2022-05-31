@@ -34,24 +34,31 @@ const Header = () => {
                                         isActive ? activeStyle : inactiveStyle
                                 }
                             ><h5>Home</h5></NavLink>
-                            {user?.email ? <Button onClick={handleLogOutButton}>Logout</Button> :
-                                <>
-                                    <NavLink
-                                        className='mx-3'
-                                        to='/login'
-                                        style={
-                                            ({ isActive }) =>
-                                                isActive ? activeStyle : inactiveStyle
-                                        }
-                                    ><h5>Login</h5></NavLink>
-                                    <NavLink
-                                        to='/signup'
-                                        style={
-                                            ({ isActive }) =>
-                                                isActive ? activeStyle : inactiveStyle
-                                        }
-                                    ><h5>SignUp</h5></NavLink>
-                                </>
+                            {
+                                user?.email
+                                    ?
+                                    <>
+                                        <p className='mx-5'>Username: <b>{user.displayName}</b></p>
+                                        <Button onClick={handleLogOutButton}>Logout</Button>
+                                    </>
+                                    :
+                                    <>
+                                        <NavLink
+                                            className='mx-3'
+                                            to='/login'
+                                            style={
+                                                ({ isActive }) =>
+                                                    isActive ? activeStyle : inactiveStyle
+                                            }
+                                        ><h5>Login</h5></NavLink>
+                                        <NavLink
+                                            to='/signup'
+                                            style={
+                                                ({ isActive }) =>
+                                                    isActive ? activeStyle : inactiveStyle
+                                            }
+                                        ><h5>SignUp</h5></NavLink>
+                                    </>
                             }
 
                         </Nav>

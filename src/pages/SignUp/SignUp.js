@@ -24,7 +24,7 @@ const SignUp = () => {
             .then(result => {
                 updateUserName(name);
                 const registeredUser = result.user;
-                console.log(registeredUser);
+                // console.log(registeredUser)
                 setUser(registeredUser);
 
             })

@@ -1,5 +1,5 @@
 import { Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import Header from '../Home/Header/Header';
 import './Login.css';
@@ -7,7 +7,13 @@ import './Login.css';
 const Login = () => {
     const { firebaseAuths } = useAuth();
     const { setUser, logInUsingGoogle, logInWithEmailPass } = firebaseAuths;
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const redirect_url = location.state?.from || '/';
+
     let email, password;
+
     const getEmail = e => {
         email = e.target.value;
     }
@@ -21,8 +27,10 @@ const Login = () => {
         logInWithEmailPass(email, password)
             .then(result => {
                 const loggedInUser = result.user;
-                console.log(loggedInUser);
+                // console.log(loggedInUser);
                 setUser(loggedInUser);
+                navigate(redirect_url);
+
             })
     }
     return (
