@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
@@ -5,6 +6,8 @@ import Header from '../Home/Header/Header';
 import './Login.css';
 
 const Login = () => {
+    const [err, setErr] = useState('');
+
     const { firebaseAuths } = useAuth();
     const { setUser, logInUsingGoogle, logInWithEmailPass, setIsLoading } = firebaseAuths;
 
@@ -33,6 +36,7 @@ const Login = () => {
 
 
             })
+            .catch(error => { setErr(error.message); console.log(err) })
             .finally(() => setIsLoading(false))
     }
     return (
@@ -41,17 +45,30 @@ const Login = () => {
             <div className='login'>
 
                 <h1>Login</h1>
+
+                {/* Login Form */}
                 <Form className=''>
+
+                    {/* email input */}
                     <Form.Group onBlur={getEmail} className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" />
                     </Form.Group>
 
+                    {/* password input */}
                     <Form.Group onBlur={getPass} className="mb-3" controlId="formBasicPassword">
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
+
+                    {/* Crearte Accout / SignUp */}
                     <Link to='/signup'><p>Create Account? SignUP</p></Link>
+
+                    {/* Show Error */}
+                    {err && <p className='text-danger'>{err}</p>
+                    }
+
+                    {/* Login Button */}
                     <Button onClick={handleLoginButton} variant="primary">
                         Login
                     </Button>
