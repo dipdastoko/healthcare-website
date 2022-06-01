@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './AuthProvider/AuthProvider';
 import Home from './pages/Home/Home/Home';
 import Login from './pages/Login/Login';
+import NotFound from './pages/NotFound/NotFound';
 import Appointment from './pages/ProtectedRoutes/Appointment/Appointment';
 import ServiceDetails from './pages/ProtectedRoutes/ServiceDetails/ServiceDetails';
 import ViewDoctorDetails from './pages/ProtectedRoutes/ViewDoctorDetails/ViewDoctorDetails';
@@ -22,6 +23,7 @@ function App() {
             <Route path='serviceDetails/:Id' element={<PrivateRoute><ServiceDetails /></PrivateRoute>} />
             <Route path='login' element={<Login />} />
             <Route path='signup' element={<SignUp />} />
+            <Route path='*' element={<NotFound></NotFound>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

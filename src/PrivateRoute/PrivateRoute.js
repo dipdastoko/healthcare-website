@@ -4,9 +4,17 @@ import useAuth from '../Hooks/useAuth';
 
 const PrivateRoute = ({ children }) => {
     const { firebaseAuths } = useAuth();
-    const { user } = firebaseAuths;
+    const { user, isLoading } = firebaseAuths;
     const location = useLocation();
-    console.log(user);
+
+    if (isLoading) {
+        return (
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        )
+    }
+
     return (
         user?.displayName ? children : <Navigate to='/login' state={{ from: location }}></Navigate >
     );

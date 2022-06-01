@@ -5,7 +5,7 @@ const useServices = () => {
     useEffect(() => {
         fetch('./fakedata.JSON')
             .then(res => res.json())
-            .then(data => setServices(data))
+            .then(data => { setServices(data); console.log(data) })
     }, [])
     return services;
 }

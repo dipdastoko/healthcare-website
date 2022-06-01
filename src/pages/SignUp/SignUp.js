@@ -1,5 +1,5 @@
 import { Button, FormControl, InputGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 import Header from '../Home/Header/Header';
 import './SignUp.css';
@@ -7,8 +7,9 @@ import './SignUp.css';
 const SignUp = () => {
     let name, email, password;
     const { firebaseAuths } = useAuth();
+    const navigate = useNavigate();
 
-    const { signUpWithEmailPass, updateUserName, setUser } = firebaseAuths;
+    const { signUpWithEmailPass, updateUserName, setUser, setIsLoading } = firebaseAuths;
     const getName = e => {
         name = e.target.value;
 
@@ -26,8 +27,11 @@ const SignUp = () => {
                 const registeredUser = result.user;
                 // console.log(registeredUser)
                 setUser(registeredUser);
+                navigate('/home');
+
 
             })
+            .finally(() => setIsLoading(false))
     }
     return (
         <>

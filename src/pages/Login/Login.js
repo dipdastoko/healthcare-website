@@ -6,7 +6,7 @@ import './Login.css';
 
 const Login = () => {
     const { firebaseAuths } = useAuth();
-    const { setUser, logInUsingGoogle, logInWithEmailPass } = firebaseAuths;
+    const { setUser, logInUsingGoogle, logInWithEmailPass, setIsLoading } = firebaseAuths;
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -31,7 +31,9 @@ const Login = () => {
                 setUser(loggedInUser);
                 navigate(redirect_url);
 
+
             })
+            .finally(() => setIsLoading(false))
     }
     return (
         <>
