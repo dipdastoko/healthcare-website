@@ -1,3 +1,5 @@
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -23,6 +25,7 @@ const Login = () => {
     const getPass = e => {
         password = e.target.value;
     }
+
     const signInGoogle = () => {
         logInUsingGoogle();
     }
@@ -30,7 +33,6 @@ const Login = () => {
         logInWithEmailPass(email, password)
             .then(result => {
                 const loggedInUser = result.user;
-                // console.log(loggedInUser);
                 setUser(loggedInUser);
                 navigate(redirect_url);
 
@@ -39,6 +41,7 @@ const Login = () => {
             .catch(error => { setErr(error.message); console.log(err) })
             .finally(() => setIsLoading(false))
     }
+
     return (
         <>
             <Header></Header>
@@ -75,7 +78,9 @@ const Login = () => {
                 </Form>
             </div>
             <br />
-            <Button onClick={signInGoogle}>Sign In Using Google</Button>
+
+            {/* Sign In Google Button */}
+            <Button onClick={signInGoogle}><FontAwesomeIcon icon={faGoogle} /> Sign In Using Google</Button>
         </>
     );
 };

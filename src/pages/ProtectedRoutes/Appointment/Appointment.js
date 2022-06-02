@@ -7,8 +7,11 @@ import './Appointment.css';
 const Appointment = () => {
     const { doctorId } = useParams();
     const { doctors } = useAuth();
+
     const doctor = doctors.find(doctor => doctor.id === parseInt(doctorId));
+
     const { name, department, designation } = doctor;
+
     return (
         <div>
             <h3>Book Appointment To</h3>
@@ -16,18 +19,26 @@ const Appointment = () => {
             <h2>{name}</h2>
             <h4>{designation}</h4>
             <h6>{department}</h6>
+
             <hr className='mx-5' />
+
             <Badge><h5>Patient's Information</h5></Badge>
+
             <Form className='text-start appointment'>
                 <br />
+                {/* Name Field */}
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label><b>Name</b></Form.Label>
                     <Form.Control type="text" placeholder="patient's name" />
                 </Form.Group>
+
+                {/* Age Field */}
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label><b>Age</b></Form.Label>
                     <Form.Control type="text" placeholder="age" />
                 </Form.Group>
+
+                {/* Blood Group */}
                 <Form.Label><b>Blood Group</b></Form.Label>
                 <Form.Select aria-label="Default select example">
                     <option>Select Blood Group</option>
@@ -42,14 +53,20 @@ const Appointment = () => {
 
                 </Form.Select>
                 <br />
+
+                {/* Phone Number */}
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label><b>Phone Number</b></Form.Label>
                     <Form.Control type="text" placeholder="01xxxxxxxxx" />
                 </Form.Group>
+
+                {/* Email */}
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label><b>Email</b></Form.Label>
                     <Form.Control type="email" placeholder="email address" />
                 </Form.Group>
+
+                {/* Submit Button */}
                 <Button variant='success'>Submit</Button>
             </Form>
         </div>

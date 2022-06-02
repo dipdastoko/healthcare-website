@@ -16,7 +16,6 @@ const Header = () => {
     const { user, logOut } = firebaseAuths;
     const handleLogOutButton = () => {
         logOut();
-        console.log(user.displayName);
     }
     return (
         <div>
