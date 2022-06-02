@@ -9,5 +9,7 @@ https://healthcare-hospital-13349.web.app
 - details of services and doctors can be seen by clicking buttons
 - login is must to see details
 - if not a user then signup to see details
+- can make appointment to a doctor
+- login must to make appointment
 - error message will be shown in login page if there is any error
 
