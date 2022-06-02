@@ -2,6 +2,7 @@ import React from 'react';
 import { Badge, Button, Form } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Header from '../../Home/Header/Header';
 import './Appointment.css';
 
 const Appointment = () => {
@@ -14,7 +15,8 @@ const Appointment = () => {
 
     return (
         <div>
-            <h3>Book Appointment To</h3>
+            <Header></Header>
+            <h3 className='mt-3'>Book Appointment To</h3>
 
             <h2>{name}</h2>
             <h4>{designation}</h4>

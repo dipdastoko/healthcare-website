@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import useAuth from '../../../Hooks/useAuth';
+import Header from '../../Home/Header/Header';
 
 
 const ServiceDetails = () => {
@@ -12,6 +13,7 @@ const ServiceDetails = () => {
     const { name, img, description } = service || {};
     return (
         <div>
+            <Header></Header>
             <h1>{name}</h1>
             <img src={img} alt="" />
             <p className='mx-5 mt-4'>{description}</p>
